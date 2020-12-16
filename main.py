@@ -100,13 +100,15 @@ simulator = sim.SIM()
 
 def dac_thread(load_sim):
 	global PLAYERS, DRAW
-
+	print "starting dac thread", load_sim
 	while True:
 		try:
 			if load_sim == 0:
+				print "looking for dac", dac.find_first_dac()
 				d = dac.DAC(dac.find_first_dac())
 				d.play_stream(ps)
 			else:
+				print "found dac?"
 				simulator.play_stream(ps)
 
 		except Exception as e:

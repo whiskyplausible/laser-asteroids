@@ -39,22 +39,30 @@ class Controller(object):
 		self.js = joystick
 
 	def getLeftHori(self):
-		return self.js.get_axis(0)
+		if self.js.get_axis(0) == -1:
+			return 1
+		return 0
 
 	def getLeftVert(self):
-		return self.js.get_axis(1)
+		if self.js.get_axis(1) == -1:
+			return 1
+		return 0
 
 	def getRightHori(self):
-		return self.js.get_axis(2)
+		if self.js.get_axis(0) == 1:
+			return 1
+		return 0
 
 	def getRightVert(self):
-		return self.js.get_axis(3)
+		if self.js.get_axis(1) == 1:
+			return 1
+		return 0
 
 	def getLeftTrigger(self):
-		return self.js.get_axis(4)
+		return self.js.get_button(0)
 
 	def getRightTrigger(self):
-		return self.js.get_axis(5)
+		return self.js.get_button(1)
 
 class XboxController(Controller):
 

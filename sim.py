@@ -18,7 +18,7 @@ class SIM(object):
 		self.screen = pygame.display.set_mode([self.screen_w,self.screen_h])
 		self.screen2 = self.screen.copy()
 
-		pygame.display.set_caption("Aperçu projection")
+		pygame.display.set_caption("Whatever")
 		self.clock = pygame.time.Clock()
 
 		self.xy_prev = (0,0)
